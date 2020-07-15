@@ -1,0 +1,27 @@
+<!-- Form submit without page refresh -->
+
+<!DOCTYPE html>
+<html>
+<body>
+<form onSubmit="callMe(event)">
+    <input type="text" name="accountNum" id="accountNumId" required="true" />
+	<select required="true" name="accountType" id="accountTypeId">
+		<option value="">select a value</option>
+  		<option value="1a">Volvo</option>
+  		<option value="2b">Saab</option>
+  		<option value="3c" selected="true">Opel</option>
+  		<option value="4d">Audi</option>
+	</select>
+    <input type="submit" value="submit"/>
+</form>
+
+<script>
+function callMe(event){
+	event.preventDefault();
+    console.log(event.target.accountNumId.value);
+    console.log(event.target.accountTypeId.value);
+}
+
+</script>
+</body>
+</html>
